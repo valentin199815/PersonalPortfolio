@@ -12,8 +12,12 @@
 }
 nav.navbar{
     background-color: rgb(11, 12, 19)!important;
-
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    
 }
+
 nav.navbar a {
     color: white !important;
     cursor: pointer;
@@ -21,62 +25,122 @@ nav.navbar a {
         text-decoration: underline;
     }
 }
-header div {
+header {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     margin: auto;
-    background-color: rgb(29, 32, 58);
-    padding-bottom: 5%;
-    width: 100%;
-    color: white;
-    .maincontainer{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    img{
-        width: 25%;
-        padding: 8% 0%;
-        border-radius: 50%;
+    background-color: rgb(244,246,241);
+    color: black;
+    margin-bottom: 10%;
+    @media screen and (max-width:500px) {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
-    h3{
-        margin: 10px 0 50px;
-    }
-    h2{
-        text-align: center;
-        padding-bottom: 3%;
-            span{
-            font-weight: bolder;
-            }
-    }
-    p{
-       padding: 0% 35% 3% 35%; 
-       text-justify: auto;
-       font-size: 18px;
-       text-align: justify;
-       @media screen and (max-width: 700px){
+    .firstcontainer{
+        padding: 10%;
         width: 100%;
-        padding: 0% 5% 3% 5%;
-       }
-    }
-    a {
-        color: white;
-        font-weight: bold;
-        cursor: pointer;
-        text-decoration: none;
-        &:hover{
-            text-decoration: underline;
+        margin: auto;
+        text-align: center;
+        img{
+            width: 80%;
+            text-align: center;
+            margin: 0 20%;
+            border-radius: 50%;
+            border: 7px solid rgb(255, 255, 255);
+            @media screen and (max-width:1100px) {
+                margin: 0 25%;
+                width: 50%;
+            }
             
-        }  
+            
+        }
     }
-    } 
+
+    .secondcontainer{
+        padding: 10% 5% 0;
+        span{
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        
+    
+        h3{
+            margin: 10px 0 50px;
+            font-size: 37px;
+            text-align: center;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        h2{
+            text-align: center;
+            padding-bottom: 3%;
+                span{
+                font-weight: bolder;
+                }
+        }
+        p{
+        font-size: 20px;
+        text-justify: auto;
+   
+        text-align: center;
+        @media screen and (max-width: 700px){
+            width: 100%;
+            padding: 0% 5% 3% 5%;
+        }
+        }
+        .contact{
+            margin-top: 10%;
+            a{
+                color: black;
+                text-decoration: none;
+                
+                vertical-align:top;
+                span, i{
+                    font-size: 20px;
+                    color: rgb(29, 32, 58);
+                    
+                    vertical-align:middle;
+                }
+
+            }
+            
+        }
+        .button{
+            text-align: center;
+            margin-top: 15%;
+            a {
+                color: white;
+                background-color: rgb(29, 32, 58);
+                
+                padding: 16px 20px;
+                border-radius: 5px;
+                text-decoration: none;
+                font-weight: bold;
+                cursor: pointer;
+                
+                &:hover{
+                    background-color: rgb(20, 23, 49);
+                } 
+            }
+        }
+        }
+        
+    
 }
 main .maincontainer{
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    padding: 3%;
+    column-gap: 3%;
+    @media screen and (max-width:400px) {
+        grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    }
     
     .left  {
-        padding: 0% 2% 0% 8%;
+        padding: 0% 2%;
         flex-grow: 4;
         img {
             width: 100%;
+            border-radius: 20px;
         }
         h2 {
             padding: 10% 0%;
@@ -84,14 +148,20 @@ main .maincontainer{
         }
     }
     .right{
-        padding: 0% 8% 0% 2%;
+        padding: 0% 2%;
         flex-grow: 4;
         img{
             width: 100%;
-            margin-bottom: 10%;
+            margin-bottom: 10%;            
+            border-radius: 20px;
+            @media screen and (max-width: 800px) {
+                display: none;
+            }
         }
         div {
-            
+            @media screen and (max-width: 800px) {
+                margin-top: 30px;
+            }
             a{
                 text-decoration: none;
                 margin-top: 10%;
@@ -99,6 +169,7 @@ main .maincontainer{
                 color: white;
                 padding: 16px 20px;
                 border: 0; outline: 0;
+                
                 &:hover{
                     background-color: rgb(51, 55, 88);
                 }
@@ -111,8 +182,7 @@ main .maincontainer{
         flex-direction: column;
         .right{
             div{
-            width: 30%;
-            margin: auto;
+            text-align: center;
             }
         }
     }
@@ -129,6 +199,7 @@ main .container-fluid{
        padding-left: 70%;
        padding-right: 3%;
        text-align: end;
+       
        span{
            font-weight: bold;
        }
@@ -153,6 +224,10 @@ main .container-fluid{
     @media screen and (min-width: 200px) and (max-width: 800px) {
         .text1{
             align-items: center;
+            p{
+                width: 80%;
+            }
+            
         }
     }
 }
@@ -223,9 +298,12 @@ main .container_pictures {
         grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
         width: 100%;
         padding: 0%;
+        @media screen and (max-width:400px) {
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+        }
         
     img{
-        width: 449px;
+        width: 100%;
         height: 350px;
         align-items: center;
         text-align: center;
@@ -328,6 +406,11 @@ footer{
             text-align: center;
             font-size: 20px;
             color: white;
+            @media screen and (max-width:700px) {
+                width: 80%;
+                margin: auto;
+                left: 9%;
+            }
             .icons a{
                 cursor: pointer;
                 padding: 0% 2%;
@@ -437,8 +520,41 @@ div.project1:hover .class-inside{
     display: flex;
     justify-content: center;
     border-bottom: 2px solid orange;
-    width: 80%;
-    margin: 0 auto;
+    width: 95%;
+    margin: 6% auto 4%;
+}
+.myprojects{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    @media screen and (max-width:500px) {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    .myprojects1{
+        padding: 5%;
+        
+        h3{text-align: center; font-weight: bold; font-size: 28px;
+            margin-bottom: 5%;
+        }
+        p{
+            text-align: center;
+            padding: 3% 5% 0%;
+            font-size: 20px;
+
+        }
+        :last-child{
+            font-weight: bold;
+            font-size: 15px;
+            margin-bottom: 8%;
+        }
+        
+        img{
+            width: 100%;
+            height: 350px;
+            max-height: 500px;
+            padding: 0 4%;
+            
+        }
+    }
 }
     
 

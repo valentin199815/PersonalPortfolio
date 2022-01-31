@@ -5,6 +5,10 @@
 
 nav.navbar {
   background-color: #0b0c13 !important;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 nav.navbar a {
@@ -16,82 +20,139 @@ nav.navbar a:hover {
   text-decoration: underline;
 }
 
-header div {
+header {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(500px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   margin: auto;
-  background-color: #1d203a;
-  padding-bottom: 5%;
+  background-color: #f4f6f1;
+  color: black;
+  margin-bottom: 10%;
+}
+
+@media screen and (max-width: 500px) {
+  header {
+    -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+header .firstcontainer {
+  padding: 10%;
   width: 100%;
-  color: white;
+  margin: auto;
+  text-align: center;
 }
 
-header div .maincontainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-header div .maincontainer img {
-  width: 25%;
-  padding: 8% 0%;
+header .firstcontainer img {
+  width: 80%;
+  text-align: center;
+  margin: 0 20%;
   border-radius: 50%;
+  border: 7px solid white;
 }
 
-header div .maincontainer h3 {
+@media screen and (max-width: 1100px) {
+  header .firstcontainer img {
+    margin: 0 25%;
+    width: 50%;
+  }
+}
+
+header .secondcontainer {
+  padding: 10% 5% 0;
+}
+
+header .secondcontainer span {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+header .secondcontainer h3 {
   margin: 10px 0 50px;
+  font-size: 37px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
-header div .maincontainer h2 {
+header .secondcontainer h2 {
   text-align: center;
   padding-bottom: 3%;
 }
 
-header div .maincontainer h2 span {
+header .secondcontainer h2 span {
   font-weight: bolder;
 }
 
-header div .maincontainer p {
-  padding: 0% 35% 3% 35%;
+header .secondcontainer p {
+  font-size: 20px;
   text-justify: auto;
-  font-size: 18px;
-  text-align: justify;
+  text-align: center;
 }
 
 @media screen and (max-width: 700px) {
-  header div .maincontainer p {
+  header .secondcontainer p {
     width: 100%;
     padding: 0% 5% 3% 5%;
   }
 }
 
-header div .maincontainer a {
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  text-decoration: none;
+header .secondcontainer .contact {
+  margin-top: 10%;
 }
 
-header div .maincontainer a:hover {
-  text-decoration: underline;
+header .secondcontainer .contact a {
+  color: black;
+  text-decoration: none;
+  vertical-align: top;
+}
+
+header .secondcontainer .contact a span, header .secondcontainer .contact a i {
+  font-size: 20px;
+  color: #1d203a;
+  vertical-align: middle;
+}
+
+header .secondcontainer .button {
+  text-align: center;
+  margin-top: 15%;
+}
+
+header .secondcontainer .button a {
+  color: white;
+  background-color: #1d203a;
+  padding: 16px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+header .secondcontainer .button a:hover {
+  background-color: #141731;
 }
 
 main .maincontainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(400px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  padding: 3%;
+  -webkit-column-gap: 3%;
+          column-gap: 3%;
+}
+
+@media screen and (max-width: 400px) {
+  main .maincontainer {
+    -ms-grid-columns: (minmax(380px, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  }
 }
 
 main .maincontainer .left {
-  padding: 0% 2% 0% 8%;
+  padding: 0% 2%;
   -webkit-box-flex: 4;
       -ms-flex-positive: 4;
           flex-grow: 4;
@@ -99,6 +160,7 @@ main .maincontainer .left {
 
 main .maincontainer .left img {
   width: 100%;
+  border-radius: 20px;
 }
 
 main .maincontainer .left h2 {
@@ -107,7 +169,7 @@ main .maincontainer .left h2 {
 }
 
 main .maincontainer .right {
-  padding: 0% 8% 0% 2%;
+  padding: 0% 2%;
   -webkit-box-flex: 4;
       -ms-flex-positive: 4;
           flex-grow: 4;
@@ -116,6 +178,19 @@ main .maincontainer .right {
 main .maincontainer .right img {
   width: 100%;
   margin-bottom: 10%;
+  border-radius: 20px;
+}
+
+@media screen and (max-width: 800px) {
+  main .maincontainer .right img {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  main .maincontainer .right div {
+    margin-top: 30px;
+  }
 }
 
 main .maincontainer .right div a {
@@ -140,8 +215,7 @@ main .maincontainer .right div a:hover {
             flex-direction: column;
   }
   main .maincontainer .right div {
-    width: 30%;
-    margin: auto;
+    text-align: center;
   }
 }
 
@@ -210,6 +284,9 @@ main .container-fluid .text1 a:hover {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+  }
+  main .container-fluid .text1 p {
+    width: 80%;
   }
 }
 
@@ -303,8 +380,15 @@ main .container_pictures .pictures {
   padding: 0%;
 }
 
+@media screen and (max-width: 400px) {
+  main .container_pictures .pictures {
+    -ms-grid-columns: (minmax(380px, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  }
+}
+
 main .container_pictures .pictures img {
-  width: 449px;
+  width: 100%;
   height: 350px;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -459,6 +543,14 @@ footer .relative .absolute {
   color: white;
 }
 
+@media screen and (max-width: 700px) {
+  footer .relative .absolute {
+    width: 80%;
+    margin: auto;
+    left: 9%;
+  }
+}
+
 footer .relative .absolute .icons a {
   cursor: pointer;
   padding: 0% 2%;
@@ -574,7 +666,51 @@ div.project1:hover .class-inside {
       -ms-flex-pack: center;
           justify-content: center;
   border-bottom: 2px solid orange;
-  width: 80%;
-  margin: 0 auto;
+  width: 95%;
+  margin: 6% auto 4%;
+}
+
+.myprojects {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(500px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+}
+
+@media screen and (max-width: 500px) {
+  .myprojects {
+    -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+.myprojects .myprojects1 {
+  padding: 5%;
+}
+
+.myprojects .myprojects1 h3 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 28px;
+  margin-bottom: 5%;
+}
+
+.myprojects .myprojects1 p {
+  text-align: center;
+  padding: 3% 5% 0%;
+  font-size: 20px;
+}
+
+.myprojects .myprojects1 :last-child {
+  font-weight: bold;
+  font-size: 15px;
+  margin-bottom: 8%;
+}
+
+.myprojects .myprojects1 img {
+  width: 100%;
+  height: 350px;
+  max-height: 500px;
+  padding: 0 4%;
 }
 /*# sourceMappingURL=style.css.map */

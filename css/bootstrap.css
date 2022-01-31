@@ -4069,10 +4069,12 @@ textarea.form-control-lg {
   border: 1px solid transparent;
   border-radius: 0.25rem;
   transition: box-shadow 0.15s ease-in-out;
+  color: white;
 }
 @media (prefers-reduced-motion: reduce) {
   .navbar-toggler {
     transition: none;
+    color: white;
   }
 }
 .navbar-toggler:hover {
@@ -4092,6 +4094,7 @@ textarea.form-control-lg {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
+  color: white;
 }
 
 .navbar-nav-scroll {
@@ -4120,9 +4123,11 @@ textarea.form-control-lg {
   .navbar-expand-sm .navbar-collapse {
     display: flex !important;
     flex-basis: auto;
+    color: white;
   }
   .navbar-expand-sm .navbar-toggler {
     display: none;
+    color: white;
   }
   .navbar-expand-sm .offcanvas-header {
     display: none;
